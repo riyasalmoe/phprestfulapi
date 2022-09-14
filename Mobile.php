@@ -30,5 +30,19 @@ class Mobile
         );
         return $mobile;
     }
+
+    public function getByName(string $mobileName)
+    {
+        $mobile = array();
+        $i = 0;
+        foreach ($this->mobiles as $key => $value) {
+
+            if ($value == $mobileName) {
+                $mobile = $mobile[$i];
+            }
+            $i++;
+        }
+        return $mobile;
+    }
 }
 ?>

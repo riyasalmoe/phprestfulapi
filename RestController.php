@@ -1,9 +1,11 @@
 <?php
-require_once ("MobileRestHandler.php");
+require_once "MobileRestHandler.php";
 
 $view = "";
-if (isset($_GET["view"]))
+if (isset($_GET["view"])) {
     $view = $_GET["view"];
+}
+
 /*
  * controls the RESTful services
  * URL mapping
@@ -22,8 +24,13 @@ switch ($view) {
         $mobileRestHandler->getMobile($_GET["id"]);
         break;
 
+    case "singlename":
+        // to handle REST Url /mobile/show/<id>/
+        $mobileRestHandler = new MobileRestHandler();
+        $mobileRestHandler->getMobileByName($_GET["mname"]);
+        break;
+
     case "":
         // 404 - not found;
         break;
 }
-?>
