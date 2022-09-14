@@ -1,3 +1,6 @@
+/**
+comment test
+*/
 <?php
 require_once ("SimpleRest.php");
 require_once ("Mobile.php");
